@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { Message } from "@/components/message";
@@ -14,6 +14,7 @@ import Link from "next/link";
 
 export default function Home() {
   const [input, setInput] = useState("");
+  const [shouldFocus, setShouldFocus] = useState(false);
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
       api: "/api/chat",
@@ -25,6 +26,14 @@ export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [messagesContainerRef, messagesEndRef] =
     useScrollToBottom<HTMLDivElement>();
+
+  // Focus input after message is sent
+  useEffect(() => {
+    if (shouldFocus && !isLoading) {
+      inputRef.current?.focus();
+      setShouldFocus(false);
+    }
+  }, [shouldFocus, isLoading]);
 
   const renderUIComponent = (part: any) => {
     if (part.type?.startsWith('tool-')) {
@@ -140,6 +149,7 @@ export default function Home() {
                 <button
                   onClick={() => {
                     sendMessage({ text: action.action });
+                    setShouldFocus(true);
                   }}
                   className="w-full text-left border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 rounded-lg p-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex flex-col"
                 >
@@ -159,6 +169,7 @@ export default function Home() {
             if (input.trim()) {
               sendMessage({ text: input });
               setInput("");
+              setShouldFocus(true);
             }
           }}
         >
