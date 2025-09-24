@@ -1,22 +1,51 @@
 "use client";
 
-import { ReactNode, useRef, useState } from "react";
-import { useActions } from "ai/rsc";
+import { useRef, useState } from "react";
+import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
 import { Message } from "@/components/message";
 import { useScrollToBottom } from "@/components/use-scroll-to-bottom";
 import { motion } from "framer-motion";
 import { MasonryIcon, VercelIcon } from "@/components/icons";
+import { CameraView } from "@/components/camera-view";
+import { HubView } from "@/components/hub-view";
+import { UsageView } from "@/components/usage-view";
 import Link from "next/link";
 
 export default function Home() {
-  const { sendMessage } = useActions();
-
-  const [input, setInput] = useState<string>("");
-  const [messages, setMessages] = useState<Array<ReactNode>>([]);
+  const [input, setInput] = useState("");
+  const { messages, sendMessage, status } = useChat({
+    transport: new DefaultChatTransport({
+      api: "/api/chat",
+    }),
+  });
+  
+  const isLoading = status === 'submitted' || status === 'streaming';
 
   const inputRef = useRef<HTMLInputElement>(null);
   const [messagesContainerRef, messagesEndRef] =
     useScrollToBottom<HTMLDivElement>();
+
+  const renderUIComponent = (part: any) => {
+    if (part.type?.startsWith('tool-')) {
+      const toolName = part.type.replace('tool-', '');
+      const result = part.output;
+      
+      if (result?.type === "ui-component") {
+        switch (result.component) {
+          case "CameraView":
+            return <CameraView />;
+          case "HubView":
+            return <HubView hub={result.data} />;
+          case "UsageView":
+            return <UsageView type={result.data?.type} />;
+          default:
+            return null;
+        }
+      }
+    }
+    return null;
+  };
 
   const suggestedActions = [
     { title: "View all", label: "my cameras", action: "View all my cameras" },
@@ -43,32 +72,58 @@ export default function Home() {
           {messages.length === 0 && (
             <motion.div className="h-[350px] px-4 w-full md:w-[500px] md:px-0 pt-20">
               <div className="border rounded-lg p-6 flex flex-col gap-4 text-zinc-500 text-sm dark:text-zinc-400 dark:border-zinc-700">
-                <p className="flex flex-row justify-center gap-4 items-center text-zinc-900 dark:text-zinc-50">
-                  <VercelIcon size={16} />
-                  <span>+</span>
-                  <MasonryIcon />
+                <p className="flex flex-row justify-center gap-4 items-center text-zinc-900 dark:text-zinc-50">                  
                 </p>
                 <p>
-                  The streamUI function allows you to stream React Server
-                  Components along with your language model generations to
-                  integrate dynamic user interfaces into your application.
+                  The useChat hook allows you to create generative user interfaces 
+                  with dynamic components that respond to AI interactions.
                 </p>
                 <p>
                   {" "}
                   Learn more about the{" "}
                   <Link
                     className="text-blue-500 dark:text-blue-400"
-                    href="https://sdk.vercel.ai/docs/ai-sdk-rsc/streaming-react-components"
+                    href="https://ai-sdk.dev/docs/ai-sdk-ui/chatbot"
                     target="_blank"
                   >
-                    streamUI{" "}
+                    useChat{" "}
                   </Link>
                   hook from Vercel AI SDK.
                 </p>
               </div>
             </motion.div>
           )}
-          {messages.map((message) => message)}
+          {messages.map((message: any) => (
+            <div key={message.id}>
+              {message.parts?.map((part: any, index: number) => {
+                if (part.type === 'text') {
+                  return (
+                    <Message
+                      key={index}
+                      role={message.role}
+                      content={part.text}
+                    />
+                  );
+                }
+                
+                // Handle tool calls and results
+                if (part.type?.startsWith('tool-')) {
+                  const component = renderUIComponent(part);
+                  if (component) {
+                    return (
+                      <Message
+                        key={index}
+                        role="assistant"
+                        content={component}
+                      />
+                    );
+                  }
+                }
+                
+                return null;
+              })}
+            </div>
+          ))}
           <div ref={messagesEndRef} />
         </div>
 
@@ -83,19 +138,8 @@ export default function Home() {
                 className={index > 1 ? "hidden sm:block" : "block"}
               >
                 <button
-                  onClick={async () => {
-                    setMessages((messages) => [
-                      ...messages,
-                      <Message
-                        key={messages.length}
-                        role="user"
-                        content={action.action}
-                      />,
-                    ]);
-                    const response: ReactNode = await sendMessage(
-                      action.action,
-                    );
-                    setMessages((messages) => [...messages, response]);
+                  onClick={() => {
+                    sendMessage({ text: action.action });
                   }}
                   className="w-full text-left border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 rounded-lg p-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex flex-col"
                 >
@@ -110,17 +154,12 @@ export default function Home() {
 
         <form
           className="flex flex-col gap-2 relative items-center"
-          onSubmit={async (event) => {
-            event.preventDefault();
-
-            setMessages((messages) => [
-              ...messages,
-              <Message key={messages.length} role="user" content={input} />,
-            ]);
-            setInput("");
-
-            const response: ReactNode = await sendMessage(input);
-            setMessages((messages) => [...messages, response]);
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (input.trim()) {
+              sendMessage({ text: input });
+              setInput("");
+            }
           }}
         >
           <input
@@ -128,9 +167,8 @@ export default function Home() {
             className="bg-zinc-100 rounded-md px-2 py-1.5 w-full outline-none dark:bg-zinc-700 text-zinc-800 dark:text-zinc-300 md:max-w-[500px] max-w-[calc(100dvw-32px)]"
             placeholder="Send a message..."
             value={input}
-            onChange={(event) => {
-              setInput(event.target.value);
-            }}
+            onChange={(e) => setInput(e.target.value)}
+            disabled={isLoading}
           />
         </form>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { Hub } from "@/app/(preview)/actions";
+import { Hub } from "@/app/api/chat/route";
 import { GuageIcon, LightningIcon, LockIcon } from "./icons";
 import { motion } from "framer-motion";
 import { scaleLinear } from "d3-scale";

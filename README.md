@@ -1,8 +1,6 @@
-# Generative UI with React Server Components and Vercel AI SDK
+# Generative UI with AI SDK UI and Vercel AI SDK
 
-> **Note**: Development of AI SDK RSC is currently paused. For more information, see [Migrating from AI SDK RSC](https://sdk.vercel.ai/docs/ai-sdk-rsc/migrating-to-ui#background).
-
-This example demonstrates how to use the [Vercel AI SDK](https://sdk.vercel.ai/docs) with [Next.js](https://nextjs.org/) and the `streamUI` function to create generative user interfaces by streaming React Server Components to the client.
+This example demonstrates how to use the [Vercel AI SDK](https://ai-sdk.dev/docs) with [Next.js](https://nextjs.org/) and the `useChat` hook to create generative user interfaces with dynamic React components.
 
 ## Deploy your own
 
@@ -31,7 +29,6 @@ To run the example locally you need to:
 3. Set the required environment variables as shown in the `.env.example` file, but in a new file called `.env`.
 4. `npm install` to install the required dependencies.
 5. `npm run dev` to launch the development server.
-
 
 ## Learn More
 
