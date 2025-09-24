@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ai-sdk-preview-rsc-genui.vercel.dev"),
-  title: "Generative User Interfaces Preview",
-  description: "Generative UI with AI SDK UI and Vercel AI SDK",
+  metadataBase: new URL("https://ailaboratories.ai"),
+  title: "AILaboratories Chat Interface",
+  description: "AI-powered chat interface with generative UI components by AILaboratories",
 };
 
 export default function RootLayout({

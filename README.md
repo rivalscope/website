@@ -1,39 +1,34 @@
-# Generative UI with AI SDK UI and Vercel AI SDK
+# AILaboratories Chat Interface
 
-This example demonstrates how to use the [Vercel AI SDK](https://ai-sdk.dev/docs) with [Next.js](https://nextjs.org/) and the `useChat` hook to create generative user interfaces with dynamic React components.
+An advanced AI-powered chat interface built by [AILaboratories](https://ailaboratories.ai) featuring generative UI components that respond intelligently to user interactions. This application showcases our cutting-edge AI technology combined with modern web frameworks.
 
-## Deploy your own
+## Features
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fai-sdk-preview-rsc-genui&env=OPENAI_API_KEY&envDescription=API%20keys%20needed%20for%20application&envLink=platform.openai.com)
+- **Generative UI Components**: Dynamic React components that adapt based on AI responses
+- **Smart Home Integration**: Control and monitor cameras, hubs, and usage data
+- **Real-time Chat**: Seamless conversation flow with AI assistance
+- **Modern Design**: Built with Next.js, Tailwind CSS, and shadcn/ui components
 
-## How to use
+## Getting Started
 
-Run [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+To run this AILaboratories chat interface locally:
 
-```bash
-npx create-next-app --example https://github.com/vercel-labs/ai-sdk-preview-rsc-genui ai-sdk-preview-rsc-genui-example
-```
+1. Sign up for an account with [AILaboratories](https://ailaboratories.ai)
+2. Obtain your API keys from the AILaboratories dashboard
+3. Set the required environment variables (see `.env.example`)
+4. Install dependencies: `npm install`
+5. Start development server: `npm run dev`
+6. Build for production: `npm run build`
 
-```bash
-yarn create next-app --example https://github.com/vercel-labs/ai-sdk-preview-rsc-genui ai-sdk-preview-rsc-genui-example
-```
+## Technology Stack
 
-```bash
-pnpm create next-app --example https://github.com/vercel-labs/ai-sdk-preview-rsc-genui ai-sdk-preview-rsc-genui-example
-```
-
-To run the example locally you need to:
-
-1. Sign up for accounts with the AI providers you want to use (e.g., OpenAI, Anthropic).
-2. Obtain API keys for each provider.
-3. Set the required environment variables as shown in the `.env.example` file, but in a new file called `.env`.
-4. `npm install` to install the required dependencies.
-5. `npm run dev` to launch the development server.
+- **Framework**: Next.js 15 with App Router
+- **AI Integration**: AI SDK UI v5 with OpenAI
+- **UI Components**: shadcn/ui with Tailwind CSS
+- **Animations**: Framer Motion with Tailwind animations
+- **Company**: Built by AILaboratories
 
 ## Learn More
 
-To learn more about Vercel AI SDK or Next.js take a look at the following resources:
-
-- [Vercel AI SDK docs](https://sdk.vercel.ai/docs)
-- [Vercel AI Playground](https://play.vercel.ai)
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [AILaboratories](https://ailaboratories.ai) - Our AI technology platform
+- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API

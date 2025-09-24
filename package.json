@@ -1,7 +1,10 @@
 {
-  "name": "website",
-  "version": "0.1.0",
+  "name": "ailaboratories-chat-interface",
+  "version": "1.0.0",
   "private": true,
+  "description": "AI-powered chat interface with generative UI components by AILaboratories",
+  "author": "AILaboratories <contact@ailaboratories.ai>",
+  "homepage": "https://ailaboratories.ai",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

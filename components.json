@@ -5,7 +5,7 @@
   "tsx": true,
   "tailwind": {
     "config": "tailwind.config.ts",
-    "css": "app/(preview)/globals.css",
+    "css": "app/(chat_interface)/globals.css",
     "baseColor": "neutral",
     "cssVariables": true,
     "prefix": ""
