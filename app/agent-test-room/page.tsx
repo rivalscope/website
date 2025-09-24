@@ -11,8 +11,11 @@ import { CameraView } from "@/components/camera-view";
 import { HubView } from "@/components/hub-view";
 import { UsageView } from "@/components/usage-view";
 import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Bot } from "lucide-react";
 
-export default function Home() {
+export default function AgentTestRoom() {
   const [input, setInput] = useState("");
   const [shouldFocus, setShouldFocus] = useState(false);
   const { messages, sendMessage, status } = useChat({
@@ -72,8 +75,38 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-row justify-center pb-20 h-dvh bg-white dark:bg-zinc-900">
-      <div className="flex flex-col justify-between gap-4">
+    <div className="min-h-screen bg-white dark:bg-zinc-900">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-14 max-w-screen-2xl items-center px-4 sm:px-6 lg:px-8">
+          <Button variant="ghost" size="sm" asChild className="mr-4">
+            <Link href="/">
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Website
+            </Link>
+          </Button>
+          <div className="flex items-center space-x-2">
+            <Image
+              src="/branding/logo_web_blue.png"
+              alt="AILaboratories"
+              width={24}
+              height={24}
+              className="h-6 w-auto dark:hidden"
+            />
+            <Image
+              src="/branding/logo_web_white.png"
+              alt="AILaboratories"
+              width={24}
+              height={24}
+              className="h-6 w-auto hidden dark:block"
+            />
+            <span className="font-semibold">AILaboratories Agent Test Room</span>
+          </div>
+        </div>
+      </header>
+
+      <div className="flex flex-row justify-center pb-20 min-h-[calc(100vh-56px)] bg-white dark:bg-zinc-900">
+        <div className="flex flex-col justify-between gap-4">
         <div
           ref={messagesContainerRef}
           className="flex flex-col gap-3 h-full w-dvw items-center overflow-y-scroll"
@@ -182,6 +215,7 @@ export default function Home() {
             disabled={isLoading}
           />
         </form>
+        </div>
       </div>
     </div>
   );
