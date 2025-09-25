@@ -25,8 +25,17 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden">
+        {/* Abstract AI/Tech Background */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Abstract Technology Network"
+            className="w-full h-full object-cover opacity-10 dark:opacity-5"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white/90 to-purple-50/80 dark:from-gray-900/90 dark:via-gray-900/95 dark:to-gray-800/90"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-6">
               About AILaboratories
@@ -49,10 +58,18 @@ export default function AboutPage() {
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <Card className="border-0 shadow-lg">
-              <CardHeader className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20">
-                <Target className="h-12 w-12 text-blue-600 mb-4" />
-                <CardTitle className="text-2xl">Our Mission</CardTitle>
+            <Card className="border-0 shadow-lg group overflow-hidden">
+              <CardHeader className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 relative">
+                {/* Mission Background Image */}
+                <div className="absolute inset-0 opacity-10 group-hover:opacity-15 transition-opacity duration-300">
+                  <img 
+                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                    alt="Team Mission and Goals"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <Target className="h-12 w-12 text-blue-600 mb-4 relative z-10" />
+                <CardTitle className="text-2xl relative z-10">Our Mission</CardTitle>
               </CardHeader>
               <CardContent className="p-8">
                 <CardDescription className="text-base leading-relaxed">
@@ -63,10 +80,18 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 shadow-lg">
-              <CardHeader className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20">
-                <Lightbulb className="h-12 w-12 text-purple-600 mb-4" />
-                <CardTitle className="text-2xl">Our Vision</CardTitle>
+            <Card className="border-0 shadow-lg group overflow-hidden">
+              <CardHeader className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 relative">
+                {/* Vision Background Image */}
+                <div className="absolute inset-0 opacity-10 group-hover:opacity-15 transition-opacity duration-300">
+                  <img 
+                    src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                    alt="Future Vision and Innovation"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <Lightbulb className="h-12 w-12 text-purple-600 mb-4 relative z-10" />
+                <CardTitle className="text-2xl relative z-10">Our Vision</CardTitle>
               </CardHeader>
               <CardContent className="p-8">
                 <CardDescription className="text-base leading-relaxed">
@@ -81,8 +106,17 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800 relative">
+        {/* Innovation/startup image */}
+        <div className="absolute right-0 top-10 w-1/3 h-80 overflow-hidden opacity-8 dark:opacity-5 rounded-l-3xl">
+          <img 
+            src="https://images.unsplash.com/photo-1553484771-cc0d9b8c2b33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Innovation and Research"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-gray-50/50 to-gray-50 dark:from-transparent dark:via-gray-800/50 dark:to-gray-800"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl mb-6">

@@ -28,8 +28,17 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden">
+        {/* Services/Consulting Background */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Business Strategy and Technology"
+            className="w-full h-full object-cover opacity-8 dark:opacity-4"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/85 via-white/95 to-purple-50/85 dark:from-gray-900/92 dark:via-gray-900/97 dark:to-gray-800/92"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-6">
               Comprehensive AI Solutions
@@ -53,6 +62,14 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
+              {/* Consultancy Image */}
+              <div className="mb-8 rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80"
+                  alt="AI Strategy Consultation"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
               <div className="flex items-center mb-6">
                 <Brain className="h-12 w-12 text-blue-600 mr-4" />
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
@@ -96,10 +113,17 @@ export default function ServicesPage() {
             </div>
             
             <div className="grid grid-cols-2 gap-6">
-              <Card>
-                <CardHeader className="pb-3">
-                  <Users className="h-8 w-8 text-blue-600 mb-2" />
-                  <CardTitle className="text-lg">Expert Team</CardTitle>
+              <Card className="group hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-3 relative overflow-hidden">
+                  <div className="absolute inset-0 opacity-5 group-hover:opacity-8 transition-opacity duration-300">
+                    <img 
+                      src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80"
+                      alt="Expert Team"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <Users className="h-8 w-8 text-blue-600 mb-2 relative z-10" />
+                  <CardTitle className="text-lg relative z-10">Expert Team</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription>
@@ -187,6 +211,14 @@ export default function ServicesPage() {
             </div>
             
             <div className="order-1 lg:order-2">
+              {/* Workflow Automation Image */}
+              <div className="mb-8 rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Automated Workflow Systems"
+                  className="w-full h-64 object-cover"
+                />
+              </div>
               <div className="flex items-center mb-6">
                 <Cog className="h-12 w-12 text-purple-600 mr-4" />
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">

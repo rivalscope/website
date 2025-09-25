@@ -9,7 +9,16 @@ export default function HomePage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="AI Neural Network Visualization"
+            className="w-full h-full object-cover opacity-10 dark:opacity-5"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white/90 to-purple-50/80 dark:from-gray-900/90 dark:via-gray-900/95 dark:to-gray-800/90"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <Badge variant="secondary" className="mb-6">
               Advanced AI Solutions
@@ -41,8 +50,16 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-white dark:bg-gray-900 relative">
+        {/* Decorative Tech Image */}
+        <div className="absolute right-0 top-20 w-1/3 h-64 overflow-hidden opacity-5 dark:opacity-3">
+          <img 
+            src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80"
+            alt="Technology Background"
+            className="w-full h-full object-cover transform rotate-12"
+          />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
               Our Core Services
@@ -53,12 +70,21 @@ export default function HomePage() {
           </div>
           
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            <Card className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20">
-                <Brain className="h-12 w-12 text-blue-600 mb-4" />
+            <Card className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+              {/* Card Image Header */}
+              <div className="h-32 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="AI Strategy Meeting"
+                  className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 to-blue-100/80 dark:from-blue-900/40 dark:to-blue-800/40"></div>
+                <Brain className="absolute bottom-4 left-4 h-12 w-12 text-blue-600" />
+              </div>
+              <CardHeader className="pb-3">
                 <CardTitle className="text-xl">AI Consultancy</CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
+              <CardContent className="p-6 pt-0">
                 <CardDescription className="text-base leading-relaxed">
                   Strategic guidance and expert advice to help you identify AI opportunities, 
                   assess feasibility, and develop implementation roadmaps tailored to your industry.
@@ -71,12 +97,21 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20">
-                <Cog className="h-12 w-12 text-purple-600 mb-4" />
+            <Card className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+              {/* Card Image Header */}
+              <div className="h-32 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+                  alt="Automated Workflow Dashboard"
+                  className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/80 to-purple-100/80 dark:from-purple-900/40 dark:to-purple-800/40"></div>
+                <Cog className="absolute bottom-4 left-4 h-12 w-12 text-purple-600" />
+              </div>
+              <CardHeader className="pb-3">
                 <CardTitle className="text-xl">Workflow Automation</CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
+              <CardContent className="p-6 pt-0">
                 <CardDescription className="text-base leading-relaxed">
                   Custom AI workflow solutions designed to automate processes, enhance productivity, 
                   and seamlessly integrate with your existing business operations.
@@ -89,12 +124,21 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20">
-                <Search className="h-12 w-12 text-green-600 mb-4" />
+            <Card className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+              {/* Card Image Header */}
+              <div className="h-32 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Research and Development Lab"
+                  className="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-green-50/80 to-green-100/80 dark:from-green-900/40 dark:to-green-800/40"></div>
+                <Search className="absolute bottom-4 left-4 h-12 w-12 text-green-600" />
+              </div>
+              <CardHeader className="pb-3">
                 <CardTitle className="text-xl">Research & Development</CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
+              <CardContent className="p-6 pt-0">
                 <CardDescription className="text-base leading-relaxed">
                   Cutting-edge R&D services to explore innovative AI applications, prototype solutions, 
                   and drive technological advancement in your domain.
@@ -111,8 +155,17 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+        {/* Team collaboration image */}
+        <div className="absolute left-0 bottom-0 w-1/2 h-96 overflow-hidden opacity-8 dark:opacity-5">
+          <img 
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Team Collaboration"
+            className="w-full h-full object-cover transform -rotate-6 scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-50/70 to-gray-50 dark:from-transparent dark:via-gray-800/70 dark:to-gray-800"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
               Why Choose AILaboratories?

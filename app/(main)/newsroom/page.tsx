@@ -89,12 +89,20 @@ export default function NewsroomPage() {
 
   return (
     <div className="container mx-auto max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8">
-      {/* Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
+      {/* Header with News Background */}
+      <div className="text-center mb-12 relative">
+        {/* News/Media Background Image */}
+        <div className="absolute inset-0 -z-10 rounded-3xl overflow-hidden opacity-5 dark:opacity-3">
+          <img 
+            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="News and Media"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl relative z-10">
           Newsroom
         </h1>
-        <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto relative z-10">
           Stay up to date with the latest news, announcements, and developments from AILaboratories. 
           Discover our research breakthroughs, product launches, and company milestones.
         </p>
@@ -134,7 +142,15 @@ export default function NewsroomPage() {
       )}
 
       {/* All News */}
-      <div>
+      <div className="relative">
+        {/* Decorative Background Element */}
+        <div className="absolute right-0 top-0 w-1/4 h-64 overflow-hidden opacity-5 dark:opacity-3 -z-10">
+          <img 
+            src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Digital News Background"
+            className="w-full h-full object-cover transform rotate-12"
+          />
+        </div>
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Latest Updates</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {regularNews.map((item) => (

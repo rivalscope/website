@@ -133,8 +133,17 @@ export default function ResearchPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden">
+        {/* Research Lab Background */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Research and Development Laboratory"
+            className="w-full h-full object-cover opacity-8 dark:opacity-4"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/85 via-white/95 to-purple-50/85 dark:from-gray-900/92 dark:via-gray-900/97 dark:to-gray-800/92"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <Badge variant="secondary" className="mb-6">
               Research & Innovation
@@ -167,10 +176,23 @@ export default function ResearchPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {researchAreas.map((area, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <CardHeader className={`bg-gradient-to-br ${area.bgColor}`}>
-                  <area.icon className={`h-12 w-12 ${area.color} mb-4`} />
-                  <CardTitle className="text-xl">{area.title}</CardTitle>
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 group overflow-hidden">
+                <CardHeader className={`bg-gradient-to-br ${area.bgColor} relative`}>
+                  {/* Research Area Background Images */}
+                  <div className="absolute inset-0 opacity-8 group-hover:opacity-12 transition-opacity duration-300">
+                    <img 
+                      src={index === 0 ? "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" :
+                           index === 1 ? "https://images.unsplash.com/photo-1526378722484-bd91ca387e32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80" :
+                           index === 2 ? "https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" :
+                           index === 3 ? "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" :
+                           index === 4 ? "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2025&q=80" :
+                           "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"}
+                      alt={area.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <area.icon className={`h-12 w-12 ${area.color} mb-4 relative z-10`} />
+                  <CardTitle className="text-xl relative z-10">{area.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="p-6">
                   <CardDescription className="text-base leading-relaxed">
@@ -184,8 +206,17 @@ export default function ResearchPage() {
       </section>
 
       {/* Current Projects */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+        {/* Research Data Visualization */}
+        <div className="absolute left-0 top-20 w-1/3 h-96 overflow-hidden opacity-6 dark:opacity-3">
+          <img 
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            alt="Data Analytics and Research"
+            className="w-full h-full object-cover transform -rotate-12 scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-50 via-gray-50/70 to-transparent dark:from-gray-800 dark:via-gray-800/70 dark:to-transparent"></div>
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
               Current Research Projects
