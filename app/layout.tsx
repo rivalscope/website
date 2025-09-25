@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: "AILaboratories - Advanced AI Solutions & Consultancy",
     template: "%s | AILaboratories"
   },
-  description: "AILaboratories provides cutting-edge AI consultancy, workflow development, and R&D solutions to transform your business operations with artificial intelligence.",
+  description: "AILaboratories provides cutting-edge AI consultancy, workflow automation, and R&D solutions to transform your business operations with artificial intelligence.",
   keywords: ["AI consultancy", "artificial intelligence", "machine learning", "AI development", "workflow automation", "R&D", "AI solutions"],
   authors: [{ name: "AILaboratories", url: "https://ailaboratories.ai" }],
   creator: "AILaboratories",
@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     url: "https://ailaboratories.ai",
     siteName: "AILaboratories",
     title: "AILaboratories - Advanced AI Solutions & Consultancy",
-    description: "Transform your business with our cutting-edge AI consultancy, workflow development, and R&D solutions.",
+    description: "Transform your business with our cutting-edge AI consultancy, workflow automation, and R&D solutions.",
   },
   twitter: {
     card: "summary_large_image",
     title: "AILaboratories - Advanced AI Solutions & Consultancy",
-    description: "Transform your business with our cutting-edge AI consultancy, workflow development, and R&D solutions.",
+    description: "Transform your business with our cutting-edge AI consultancy, workflow automation, and R&D solutions.",
     creator: "@ailaboratories",
   },
   robots: {

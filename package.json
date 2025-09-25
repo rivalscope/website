@@ -2,7 +2,7 @@
   "name": "ailaboratories-website",
   "version": "1.0.0",
   "private": true,
-  "description": "AILaboratories official website - AI consultancy, workflow development, and R&D services",
+  "description": "AILaboratories official website - AI consultancy, workflow automation, and R&D services",
   "author": "AILaboratories <contact@ailaboratories.ai>",
   "homepage": "https://ailaboratories.ai",
   "scripts": {

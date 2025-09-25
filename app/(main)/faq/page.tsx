@@ -19,7 +19,7 @@ import {
 
 export const metadata: Metadata = {
   title: "FAQ - Frequently Asked Questions | AILaboratories",
-  description: "Find answers to common questions about AILaboratories' AI consultancy, workflow development, and R&D services. Get the information you need to get started.",
+  description: "Find answers to common questions about AILaboratories' AI consultancy, workflow automation, and R&D services. Get the information you need to get started.",
 };
 
 const faqCategories = [
@@ -55,7 +55,7 @@ const faqCategories = [
     questions: [
       {
         q: "What's the typical project cost?",
-        a: "Project costs vary significantly based on scope, complexity, and requirements. AI consultancy projects typically range from $25K-$100K, workflow development from $50K-$500K, and R&D initiatives from $100K-$1M+. We provide detailed, transparent proposals after understanding your specific needs."
+        a: "Project costs vary significantly based on scope, complexity, and requirements. AI consultancy projects typically range from $25K-$100K, workflow automation from $50K-$500K, and R&D initiatives from $100K-$1M+. We provide detailed, transparent proposals after understanding your specific needs."
       },
       {
         q: "Do you offer different pricing models?",
@@ -321,7 +321,7 @@ export default function FAQPage() {
                   </CardHeader>
                   <CardContent>
                     <CardDescription>
-                      Discover our workflow development and integration capabilities.
+                      Discover our workflow automation and integration capabilities.
                     </CardDescription>
                   </CardContent>
                 </Card>

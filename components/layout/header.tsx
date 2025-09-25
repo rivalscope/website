@@ -25,51 +25,52 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center px-4 sm:px-6 lg:px-8">
-        <div className="mr-4 hidden md:flex">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image
-              src="/branding/logo_web_blue.png"
-              alt="AILaboratories"
-              width={32}
-              height={32}
-              className="h-8 w-auto dark:hidden"
-            />
-            <Image
-              src="/branding/logo_web_white.png"
-              alt="AILaboratories"
-              width={32}
-              height={32}
-              className="h-8 w-auto hidden dark:block"
-            />
-            <span className="hidden font-bold sm:inline-block">
-              AILaboratories
-            </span>
-          </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "transition-colors hover:text-foreground/80",
-                  pathname === item.href
-                    ? "text-foreground"
-                    : "text-foreground/60"
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
+      <div className="container mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Logo */}
+        <Link href="/" className="flex items-center space-x-2">
+          <Image
+            src="/branding/logo_web_blue.png"
+            alt="AILaboratories"
+            width={32}
+            height={32}
+            className="h-8 w-auto dark:hidden"
+          />
+          <Image
+            src="/branding/logo_web_white.png"
+            alt="AILaboratories"
+            width={32}
+            height={32}
+            className="h-8 w-auto hidden dark:block"
+          />
+          <span className="hidden font-bold sm:inline-block">
+            AILaboratories
+          </span>
+        </Link>
+
+        {/* Desktop Navigation - moved to the right */}
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "transition-colors hover:text-foreground/80",
+                pathname === item.href
+                  ? "text-foreground"
+                  : "text-foreground/60"
+              )}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
         
         {/* Mobile Navigation */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
-              className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+              className="px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
             >
               <Menu className="h-5 w-5" />
               <span className="sr-only">Toggle Menu</span>
@@ -114,33 +115,6 @@ export function Header() {
             </nav>
           </SheetContent>
         </Sheet>
-        
-        <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
-          <div className="w-full flex-1 md:w-auto md:flex-none">
-            <Link href="/" className="flex items-center space-x-2 md:hidden">
-              <Image
-                src="/branding/logo_web_blue.png"
-                alt="AILaboratories"
-                width={24}
-                height={24}
-                className="h-6 w-auto dark:hidden"
-              />
-              <Image
-                src="/branding/logo_web_white.png"
-                alt="AILaboratories"
-                width={24}
-                height={24}
-                className="h-6 w-auto hidden dark:block"
-              />
-              <span className="font-bold">AILaboratories</span>
-            </Link>
-          </div>
-          <nav className="flex items-center">
-            <Button asChild>
-              <Link href="/contact">Get Started</Link>
-            </Button>
-          </nav>
-        </div>
       </div>
     </header>
   );

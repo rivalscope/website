@@ -21,7 +21,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Contact Us - Get Started with AI Solutions",
-  description: "Contact AILaboratories for AI consultancy, workflow development, and R&D services. Let's discuss how we can transform your business with artificial intelligence.",
+  description: "Contact AILaboratories for AI consultancy, workflow automation, and R&D services. Let's discuss how we can transform your business with artificial intelligence.",
 };
 
 export default function ContactPage() {
@@ -97,7 +97,7 @@ export default function ContactPage() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="consultancy">AI Consultancy</SelectItem>
-                      <SelectItem value="workflow">Workflow Development</SelectItem>
+                      <SelectItem value="workflow">Workflow Automation</SelectItem>
                       <SelectItem value="research">Research & Development</SelectItem>
                       <SelectItem value="custom">Custom Solution</SelectItem>
                       <SelectItem value="other">Other</SelectItem>

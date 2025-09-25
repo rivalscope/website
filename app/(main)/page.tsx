@@ -21,7 +21,7 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-gray-600 dark:text-gray-300">
-              AILaboratories provides cutting-edge AI consultancy, workflow development, 
+              AILaboratories provides cutting-edge AI consultancy, workflow automation, 
               and R&D solutions to revolutionize your operations and unlock new possibilities.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -74,7 +74,7 @@ export default function HomePage() {
             <Card className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20">
                 <Cog className="h-12 w-12 text-purple-600 mb-4" />
-                <CardTitle className="text-xl">Workflow Development</CardTitle>
+                <CardTitle className="text-xl">Workflow Automation</CardTitle>
               </CardHeader>
               <CardContent className="p-6">
                 <CardDescription className="text-base leading-relaxed">

@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/40 bg-background">
       <div className="container mx-auto max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
@@ -28,8 +28,8 @@ export function Footer() {
             </div>
             <p className="text-muted-foreground max-w-md">
               Transforming businesses with cutting-edge AI solutions, consultancy, 
-              and research. We specialize in AI workflow development and R&D to 
-              support companies in their digital transformation journey.
+              and research. We specialize in AI workflow automation and R&D to 
+              support industries in their digital transformation journey.
             </p>
             <div className="mt-6 flex space-x-4">
               <Link
@@ -86,7 +86,7 @@ export function Footer() {
                   href="/services#workflow-development"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Workflow Development
+                  Workflow Automation
                 </Link>
               </li>
               <li>
@@ -122,26 +122,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/services"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/research"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Research
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  FAQ
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contact"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Contact
                 </Link>
               </li>
               <li>
@@ -154,27 +146,52 @@ export function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* Legal */}
+          <div>
+            <h3 className="text-sm font-semibold text-foreground mb-4">Legal</h3>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="mt-8 border-t border-border/40 pt-8">
-          <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} AILaboratories. All rights reserved.
+          <div className="flex justify-center">
+            <p className="text-sm text-muted-foreground text-center">
+              © 2025 AILaboratories. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm text-muted-foreground">
-              <Link
-                href="/privacy"
-                className="hover:text-foreground transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="hover:text-foreground transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
           </div>
         </div>
       </div>

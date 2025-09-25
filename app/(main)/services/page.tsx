@@ -20,8 +20,8 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services - AI Consultancy, Workflow Development & R&D",
-  description: "Explore AILaboratories' comprehensive AI services: strategic consultancy, custom workflow development, and cutting-edge research & development solutions.",
+  title: "Services - AI Consultancy, Workflow Automation & R&D",
+  description: "Explore AILaboratories' comprehensive AI services: strategic consultancy, custom workflow automation, and cutting-edge research & development solutions.",
 };
 
 export default function ServicesPage() {
@@ -148,7 +148,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Workflow Development */}
+      {/* Workflow Automation */}
       <section id="workflow-development" className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -190,7 +190,7 @@ export default function ServicesPage() {
               <div className="flex items-center mb-6">
                 <Cog className="h-12 w-12 text-purple-600 mr-4" />
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
-                  Workflow Development
+                  Workflow Automation
                 </h2>
               </div>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
