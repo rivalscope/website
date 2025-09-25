@@ -1,6 +1,7 @@
 import "../globals.css";
 import { Metadata } from "next";
 import { Toaster } from "sonner";
+import { Header } from "@/components/layout/header";
 
 export const metadata: Metadata = {
   title: "Agent Test Room - Try Our AI Assistant",
@@ -13,9 +14,12 @@ export default function AgentTestRoomLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="min-h-screen">
-      <Toaster position="top-center" richColors />
-      {children}
+    <div className="relative flex min-h-screen flex-col">
+      <Header />
+      <main className="flex-1">
+        <Toaster position="top-center" richColors />
+        {children}
+      </main>
     </div>
   );
 }

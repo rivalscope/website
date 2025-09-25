@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -31,40 +30,51 @@ export function Footer() {
               and research. We specialize in AI workflow automation and R&D to 
               support industries in their digital transformation journey.
             </p>
-            <div className="mt-6 flex space-x-4">
+                                    <div className="mt-6 flex items-center space-x-4">
               <Link
-                href="https://github.com/ailaboratories"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                href="https://www.linkedin.com/company/ailaboratoriesuk"
+                className="text-muted-foreground hover:text-foreground transition-colors inline-block"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </Link>
-              <Link
-                href="https://twitter.com/ailaboratories"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link
-                href="https://linkedin.com/company/ailaboratories"
-                className="text-muted-foreground hover:text-foreground transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Linkedin className="h-5 w-5" />
+                <Image
+                  src="/social/linkedin.png"
+                  alt="LinkedIn"
+                  width={20}
+                  height={20}
+                  className="w-8 h-8 object-contain"
+                />
                 <span className="sr-only">LinkedIn</span>
               </Link>
               <Link
-                href="mailto:contact@ailaboratories.ai"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                href="https://x.com/ailaboratories_"
+                className="text-muted-foreground hover:text-foreground transition-colors inline-block"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Mail className="h-5 w-5" />
-                <span className="sr-only">Email</span>
+                <Image
+                  src="/social/x.png"
+                  alt="X"
+                  width={20}
+                  height={20}
+                  className="w-7 h-7 object-contain"
+                />
+                <span className="sr-only">X</span>
+              </Link>
+              <Link
+                href="https://www.meetup.com/members/406887609/"
+                className="text-muted-foreground hover:text-foreground transition-colors inline-block"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/social/meetup.png"
+                  alt="Meetup"
+                  width={20}
+                  height={20}
+                  className="w-8 h-8 object-contain"
+                />
+                <span className="sr-only">Meetup</span>
               </Link>
             </div>
           </div>
@@ -147,9 +157,9 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Support */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4">Legal</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-4">Support</h3>
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
@@ -169,10 +179,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/privacy"
+                  href="/newsroom"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Privacy Policy
+                  Newsroom
                 </Link>
               </li>
               <li>
