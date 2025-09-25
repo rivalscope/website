@@ -22,6 +22,19 @@
     .text-balance {
         text-wrap: balance;
     }
+    
+    .overflow-wrap-anywhere {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        hyphens: auto;
+    }
+    
+    .chat-message-container {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+    }
 }
 
 

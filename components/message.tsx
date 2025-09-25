@@ -22,8 +22,8 @@ export const Message = ({
         {role === "assistant" ? <BotIcon /> : <UserIcon />}
       </div>
 
-      <div className="flex flex-col gap-1 w-full">
-        <div className="text-zinc-800 dark:text-zinc-300 flex flex-col gap-4">
+      <div className="flex flex-col gap-1 w-full min-w-0">
+        <div className="text-zinc-800 dark:text-zinc-300 flex flex-col gap-4 break-words overflow-wrap-anywhere">
           {typeof content === "string" ? <Markdown>{content}</Markdown> : content}
         </div>
       </div>
