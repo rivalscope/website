@@ -70,9 +70,10 @@ export default function ProductsPage() {
                       Private AI in Your Pocket
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      Dream Machine 1 represents a breakthrough in portable AI computing. This pocket-sized device 
-                      runs sophisticated AI models and agents workflows completely offline, ensuring your data never 
-                      leaves your control.
+                      Dream Machine 1 represents a breakthrough in portable AI computing. This pocket-sized device is <span className="font-semibold">designed for completely offline operation</span>, running sophisticated AI models and agent workflows with zero cloud or internet dependency—ensuring your data never leaves your control.<br />
+                      For those who need it, hybrid and online-only modes are also available, but <span className="font-semibold">true privacy and security</span> come from its fully offline capabilities.<br />
+                      <br />
+                      <span className="font-semibold">Paired with our FlowFoundry agentic platform</span>, Dream Machine 1 gives individuals, professionals, and companies a first-in-class, agent-ready superpower—empowering anyone to harness the power of AI with little technical knowledge required.
                     </p>
                   </div>
 
@@ -291,6 +292,82 @@ export default function ProductsPage() {
               </div>
             </TabsContent>
 
+            {/* FlowFoundry Tab */}
+            <TabsContent value="flowfoundry" className="space-y-12">
+              <div className="text-center mb-12">
+                <div className="flex flex-col items-center justify-center mb-4 gap-2">
+                  <div className="flex items-center justify-center mb-4">
+                    <Network className="h-12 w-12 text-blue-600 mr-3" />
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white">FlowFoundry</h2>
+                  </div>
+                </div>
+                <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                  FlowFoundry is our revolutionary drag and drop distributed compute agent builder.
+                  Effortlessly design, deploy, and orchestrate complex agentic workflows across devices, clouds, and edge environments—all with a visual, no-code interface.
+                </p>
+                <Badge variant="secondary" className="mt-2">Visual Agent Builder</Badge>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* FlowFoundry Image - no card, no background */}
+                <div className="flex justify-center items-center w-full h-full">
+                  <img
+                    src="/flowfoundry/flowfoundry.png"
+                    alt="FlowFoundry UI Screenshot"
+                    className="max-w-full h-auto object-contain"
+                  />
+                </div>
+
+                {/* FlowFoundry Details */}
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                      Visual Agentic Workflows
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      Build distributed AI agents and automation pipelines with a simple drag-and-drop interface. FlowFoundry empowers anyone to create, connect, and deploy intelligent agents—no coding required.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex items-start space-x-3">
+                      <Zap className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Drag & Drop Builder</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">No-code visual workflow design</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Network className="h-5 w-5 text-purple-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Distributed Compute</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">Run agents anywhere—edge, cloud, or on-prem</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Cpu className="h-5 w-5 text-green-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Agent Orchestration</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">Coordinate multi-agent systems visually</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Shield className="h-5 w-5 text-orange-600 mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-semibold text-gray-900 dark:text-white">Secure & Private</h4>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">Privacy-first, secure agent execution</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pt-4">
+                    <Button asChild>
+                      <Link href="/contact">
+                        Request Demo <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </TabsContent>
             {/* Medusa LLM Tab */}
             <TabsContent value="medusa" className="space-y-12">
               <div className="text-center mb-12">
@@ -681,7 +758,7 @@ export default function ProductsPage() {
                   Get Early Access <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600" asChild>
+              <Button size="lg" variant="outline" className="border-white text-blue-100 hover:bg-white hover:text-blue-600" asChild>
                 <Link href="/research">
                   Learn About Our R&D
                 </Link>
