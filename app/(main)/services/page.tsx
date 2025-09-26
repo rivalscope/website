@@ -359,7 +359,7 @@ export default function ServicesPage() {
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600" asChild>
                 <Link href="/agent-test-room">
-                  Try Our AI Agent
+                  Try Our AI Agents
                 </Link>
               </Button>
             </div>

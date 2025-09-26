@@ -249,7 +249,7 @@ export default function FAQPage() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="mb-4">
-                    Chat with our AI agent for instant answers
+                    Chat with our AI agents for instant answers
                   </CardDescription>
                   <Button variant="outline" size="sm" asChild>
                     <Link href="/agent-test-room">Start Chat</Link>

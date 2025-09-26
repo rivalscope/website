@@ -3,48 +3,52 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Brain, Cog, Search, Users, Zap, ChevronRight } from "lucide-react";
+import ParticlesBackground from "@/components/particles-background";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
-        {/* Background Image with Overlay */}
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800 overflow-hidden">
+        {/* Particles Background */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            alt="AI Neural Network Visualization"
-            className="w-full h-full object-cover opacity-10 dark:opacity-5"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white/90 to-purple-50/80 dark:from-gray-900/90 dark:via-gray-900/95 dark:to-gray-800/90"></div>
+          <ParticlesBackground />
         </div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-20">
           <div className="text-center">
-            <Badge variant="secondary" className="mb-6">
-              Advanced AI Solutions
-            </Badge>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
-              Transform Your Business with{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Artificial Intelligence
-              </span>
-            </h1>
-            <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-gray-600 dark:text-gray-300">
-              AILaboratories provides cutting-edge AI consultancy, workflow automation, 
-              and R&D solutions to revolutionize your operations and unlock new possibilities.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button asChild size="lg">
-                <Link href="/contact">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/agent-test-room">
-                  Try Our AI Agent <Zap className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+            <div className="hero-content-fade-in" style={{ animationDelay: '0.2s' }}>
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-7xl">
+                Transform Your Business Operations
+                <br />
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  with Artificial Intelligence
+                </span>
+              </h1>
             </div>
+            
+            <div className="hero-content-fade-in" style={{ animationDelay: '0.8s' }}>
+              <p className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-gray-700 dark:text-gray-300">
+                AILaboratories provides cutting-edge AI consultancy, workflow automation, 
+                and R&D solutions to revolutionize your operations and unlock new possibilities.
+              </p>
+            </div>
+            
+            <div className="hero-content-fade-in" style={{ animationDelay: '1.1s' }}>
+              <div className="mt-10 flex items-center justify-center gap-x-6">
+                <Button asChild size="lg" className="pulse-glow">
+                  <Link href="/contact">
+                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <Link href="/agent-test-room">
+                    Agents Test Room <Zap className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            
+
           </div>
         </div>
       </section>
@@ -236,7 +240,7 @@ export default function HomePage() {
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600" asChild>
                 <Link href="/agent-test-room">
-                  Experience Our AI
+                  Agents Test Room
                 </Link>
               </Button>
             </div>

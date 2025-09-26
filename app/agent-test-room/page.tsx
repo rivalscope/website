@@ -12,7 +12,7 @@ import { HubView } from "@/components/hub-view";
 import { UsageView } from "@/components/usage-view";
 import Link from "next/link";
 
-export default function AgentTestRoom() {
+export default function AgentsTestRoom() {
   const [input, setInput] = useState("");
   const [shouldFocus, setShouldFocus] = useState(false);
   const { messages, sendMessage, status } = useChat({

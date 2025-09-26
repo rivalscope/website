@@ -37,6 +37,113 @@
     }
 }
 
+/* Neural Network Animation Styles */
+@layer components {
+    .hero-animation-container {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero-content-fade-in {
+        animation: heroFadeIn 1.5s ease-out forwards;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    
+    .hero-title-typing {
+        animation: typewriter 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 3px solid transparent;
+        width: 0;
+        max-width: 100%;
+    }
+    
+    .ai-gradient-text {
+        background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
+        background-size: 300% 300%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        animation: gradientShift 4s ease-in-out infinite;
+    }
+    
+    .floating-badge {
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    .pulse-glow {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        animation: pulseGlow 2s ease-in-out infinite;
+    }
+}
+
+@keyframes heroFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typewriter {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 50% {
+        border-color: #3b82f6;
+    }
+    51%, 100% {
+        border-color: transparent;
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 40px rgba(139, 92, 246, 0.3);
+    }
+}
+
+@keyframes imageTransition {
+    0%, 45% {
+        opacity: 1;
+    }
+    55%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes imageTransitionReverse {
+    0%, 45% {
+        opacity: 0;
+    }
+    55%, 100% {
+        opacity: 1;
+    }
+}
+
 
 
 @layer base {

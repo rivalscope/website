@@ -17,7 +17,8 @@ import {
   Eye,
   MessageSquare,
   Shield,
-  Zap
+  Zap,
+  Server
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -254,6 +255,276 @@ export default function ResearchPage() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Product R&D Projects */}
+      <section className="py-20 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
+              Product R&D Pipeline
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300">
+              Revolutionary hardware and software products currently under development
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-8">
+            {/* Dream Machine 1 */}
+            <Card className="border-2 border-blue-200 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-700 transition-colors duration-300">
+              <CardHeader className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/40 rounded-lg flex items-center justify-center">
+                    <Cpu className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <Badge variant="outline">Hardware R&D</Badge>
+                </div>
+                <CardTitle className="text-xl">Dream Machine 1</CardTitle>
+                <CardDescription>Portable AI Device</CardDescription>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    First-of-its-kind pocket-sized AI device capable of running private AI models 
+                    and agents workflows completely offline. Revolutionary hardware design optimized 
+                    for AI processing in an ultra-portable form factor.
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-gray-900 dark:text-white text-sm">Research Focus:</h4>
+                    <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                        Edge AI optimization algorithms
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                        Ultra-low power AI processors
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                        Thermal management systems
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
+                        Privacy-preserving architectures
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* IOCentral */}
+            <Card className="border-2 border-purple-200 dark:border-purple-800 hover:border-purple-300 dark:hover:border-purple-700 transition-colors duration-300">
+              <CardHeader className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/40 rounded-lg flex items-center justify-center">
+                    <Users className="h-6 w-6 text-purple-600" />
+                  </div>
+                  <Badge variant="outline">Hardware R&D</Badge>
+                </div>
+                <CardTitle className="text-xl">IOCentral Series</CardTitle>
+                <CardDescription>AI Workstation Platform</CardDescription>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Professional AI workstation series designed for teams of 1-10+ users. 
+                    Scalable architecture enabling private AI deployment across organizations 
+                    with enterprise-grade security and performance.
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-gray-900 dark:text-white text-sm">Research Focus:</h4>
+                    <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                        Multi-user AI resource management
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                        Distributed computing architectures
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                        Enterprise security protocols
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-2"></div>
+                        Scalable hardware designs
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* FlowFoundry */}
+            <Card className="border-2 border-green-200 dark:border-green-800 hover:border-green-300 dark:hover:border-green-700 transition-colors duration-300">
+              <CardHeader className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-green-100 dark:bg-green-900/40 rounded-lg flex items-center justify-center">
+                    <Zap className="h-6 w-6 text-green-600" />
+                  </div>
+                  <Badge variant="outline">Software R&D</Badge>
+                </div>
+                <CardTitle className="text-xl">FlowFoundry</CardTitle>
+                <CardDescription>Modular AI Platform</CardDescription>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Revolutionary software platform enabling anyone to build AI workflows and 
+                    multi-agent systems through visual, modular interfaces. Designed to run 
+                    on Dream Machine and IOCentral hardware.
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-gray-900 dark:text-white text-sm">Research Focus:</h4>
+                    <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
+                        Visual programming paradigms
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
+                        Multi-agent orchestration
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
+                        Distributed workflow execution
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
+                        No-code AI development
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Medusa LLM */}
+            <Card className="border-2 border-orange-200 dark:border-orange-800 hover:border-orange-300 dark:hover:border-orange-700 transition-colors duration-300">
+              <CardHeader className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/40 rounded-lg flex items-center justify-center">
+                    <MessageSquare className="h-6 w-6 text-orange-600" />
+                  </div>
+                  <Badge variant="outline">AI Model R&D</Badge>
+                </div>
+                <CardTitle className="text-xl">Medusa LLM</CardTitle>
+                <CardDescription>Agentic Language Model</CardDescription>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Compact 3B parameter INT8 language model specialized for agentic workflows, 
+                    advanced tool usage, and intelligent input discrimination. Developed in the UK and designed for 
+                    edge deployment while maintaining sophisticated reasoning capabilities.
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-gray-900 dark:text-white text-sm">Research Focus:</h4>
+                    <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></div>
+                        Advanced quantization techniques
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></div>
+                        Tool usage optimization
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></div>
+                        Input intent classification
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></div>
+                        Agentic workflow training
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Genie IoT */}
+            <Card className="border-2 border-teal-200 dark:border-teal-800 hover:border-teal-300 dark:hover:border-teal-700 transition-colors duration-300">
+              <CardHeader className="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-900/20 dark:to-teal-800/20">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/40 rounded-lg flex items-center justify-center">
+                    <Server className="h-6 w-6 text-teal-600" />
+                  </div>
+                  <Badge variant="outline">IoT Hardware R&D</Badge>
+                </div>
+                <CardTitle className="text-xl">Genie IoT</CardTitle>
+                <CardDescription>Physical World Interface</CardDescription>
+              </CardHeader>
+              <CardContent className="p-6">
+                <div className="space-y-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Plug-and-play IoT hardware range enabling agentic applications to control 
+                    physical world equipment, machinery, and sensors. Seamless FlowFoundry 
+                    integration for automated industrial and domestic environments.
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-gray-900 dark:text-white text-sm">Research Focus:</h4>
+                    <ul className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></div>
+                        Zero-config device protocols
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></div>
+                        Industrial automation interfaces
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></div>
+                        Real-time sensor networks
+                      </li>
+                      <li className="flex items-center">
+                        <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2"></div>
+                        Edge processing integration
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="text-center mt-12">
+            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6 max-w-4xl mx-auto">
+              <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-3">
+                Integrated Ecosystem Approach
+              </h3>
+              <p className="text-blue-700 dark:text-blue-300 leading-relaxed">
+                These five products represent our vision for democratizing AI technology. Dream Machine and IOCentral 
+                provide the private, secure hardware foundation, FlowFoundry makes advanced AI development 
+                accessible through intuitive visual interfaces, Medusa LLM serves as the intelligent brain 
+                powering agentic workflows, and Genie IoT bridges the digital and physical worlds through 
+                plug-and-play automation devices. Together, they form a complete ecosystem 
+                for private AI deployment, development, and real-world intelligent automation.
+              </p>
+            </div>
+            
+            <div className="mt-8">
+              <Button asChild size="lg" className="mr-4">
+                <Link href="/products">
+                  Explore Products <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link href="/contact">
+                  Join Development Program
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

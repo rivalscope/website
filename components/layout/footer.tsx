@@ -112,7 +112,7 @@ export function Footer() {
                   href="/agent-test-room"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Agent Test Room
+                  Agents Test Room
                 </Link>
               </li>
             </ul>
@@ -136,6 +136,14 @@ export function Footer() {
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Products
                 </Link>
               </li>
               <li>

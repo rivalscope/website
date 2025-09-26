@@ -30,7 +30,7 @@ GETTING STARTED:
 - What makes us different: Unique combination of deep technical expertise, industry experience across 25+ sectors, and commitment to practical, business-focused solutions that drive real ROI.
 
 SERVICES & PRICING:
-- Project costs: AI consultancy projects typically range from £1.5K-£100K+, agent workflow automation from £2K-£500K, R&D initiatives from £100K-£1M+++. Costs vary based on scope and complexity.
+- Project costs: AI consultancy projects typically range from £1.5K-£100K+, agents workflow automation from £2K-£500K, R&D initiatives from £100K-£1M+++. Costs vary based on scope and complexity.
 - Pricing models: Fixed-price projects, time & materials for exploratory work, retainer agreements for ongoing support, and equity partnerships for startups.
 - AI solutions we develop: Machine learning models, natural language processing systems, computer vision applications, predictive analytics platforms, intelligent automation workflows, recommendation engines, chatbots and virtual assistants, custom AI-powered applications.
 - System integration: We specialize in seamless integration with existing CRMs, ERPs, databases, APIs, cloud platforms, and legacy systems with minimal disruption.

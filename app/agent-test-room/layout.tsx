@@ -4,11 +4,11 @@ import { Toaster } from "sonner";
 import { Header } from "@/components/layout/header";
 
 export const metadata: Metadata = {
-  title: "Agent Test Room - Try Our AI Assistant",
+  title: "Agents Test Room - Try Our AI Assistants",
   description: "Experience AILaboratories' advanced AI assistant in our interactive test environment. See our AI capabilities in action with real-time responses.",
 };
 
-export default function AgentTestRoomLayout({
+export default function AgentsTestRoomLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
